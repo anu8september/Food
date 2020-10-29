@@ -1,0 +1,33 @@
+      <div class="row">
+        
+        <div class="col-md-6">
+          <h6 class="m-0 font-weight-bold text-primary">Food Item</h6>
+        </div>  
+       
+      </div>
+      <div class="col-md-6 user">
+        <button type="submit" class="btn btn-primary pl-4 pr-4" ><a [routerLink]="addRouterItem" >Add Item</a></button>
+      </div>
+     
+    
+        <table  cellspacing="10">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Descripton</th>
+              <th>Delete </th>
+            </tr>
+          </thead>
+        
+            <tr *ngFor="let item of FoodItemData  ; let i = index">
+              <td>{{i + serialNumber + 1}}</td>
+              <td>{{item.name}}
+              </td>
+              <td>{{item.description}}</td>
+              <td><button  (click)="delete(item)">Delete</button></td>
+
+            </tr>
+        </table>
+        <h4 *ngIf=" FoodItemData && FoodItemData.length==0" class="text-center">No records found.</h4>
+  

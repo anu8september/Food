@@ -1,0 +1,25 @@
+        <div class="modal-header">
+          <h5 class="modal-title">Add Item</h5>
+        </div>
+        <div class="modal-body">
+          <form #ItemForm="ngForm">
+            <div class="form-group">
+              <label>Image</label>
+                <input  type="file" (change)="onImageSelect($event)" id="itemFile" accept=".png, .jpg, .jpeg"> 
+            </div>
+            <br>
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" maxlength="25" name="name" [(ngModel)]="itemName" required />
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" maxlength="50" name="name" [(ngModel)]="description" required ></textarea>
+              </div>
+          </form>
+        
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-primary" [disabled]="!ItemForm.valid" (click)="addItem()">Save</button>
+        </div>
+      

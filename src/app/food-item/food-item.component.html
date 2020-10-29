@@ -9,7 +9,7 @@
         <button type="submit" class="btn btn-primary pl-4 pr-4" ><a [routerLink]="addRouterItem" >Add Item</a></button>
       </div>
      
-    
+      <div class="table-responsive">
         <table  cellspacing="10">
           <thead>
             <tr>
@@ -30,4 +30,6 @@
             </tr>
         </table>
         <h4 *ngIf=" FoodItemData && FoodItemData.length==0" class="text-center">No records found.</h4>
+
+        </div>
   

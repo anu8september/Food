@@ -36,10 +36,13 @@ export class AddFoodComponent implements OnInit {
       "image": this.image,
       "description":this.description,
     }
+    this.formData.append('name', this.itemName);
+    this.formData.append('description', this.description);
+
     this.ItemData.push(body)
     localStorage.setItem("ItemData",JSON.stringify(this.ItemData));
- this.router.navigate(['/'])
-    this.api.addFoodItem(body).subscribe((response: any) => {
+    this.router.navigate(['/'])
+    this.api.addFoodItem(this.formData).subscribe((response: any) => {
       if (response.success == true) {
         return this.toast.errorToastr(response.message);}
       this.toast.successToastr('Item added successfully!');

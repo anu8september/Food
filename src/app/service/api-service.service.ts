@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ApiServiceService {
-  baseUrl: string = "abc/";
+  baseUrl: string = "https://abc:3030/";
 
   constructor(private http: HttpClient, public router: Router) {
   }
-  addFoodItem(body) {
+  addFoodItem(body:any) {
     return this.http.post(`${this.baseUrl}/addItem`, body);
   }
 }
